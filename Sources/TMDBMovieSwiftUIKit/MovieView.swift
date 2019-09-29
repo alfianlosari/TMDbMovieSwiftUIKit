@@ -47,14 +47,14 @@ public struct MovieView: View {
                     
                     Section {
                         Text(self.movieViewModel.movie!.overview)
-                            .lineLimit(0)
+                            .lineLimit(nil)
                             .font(.body)
                     }
                     
                     if (self.movieViewModel.movie!.castText != nil) {
                         Section(header: Text("Casts")) {
                             Text(self.movieViewModel.movie!.castText!)
-                                .lineLimit(0)
+                                .lineLimit(nil)
                                 .font(.body)
                         }
                     }
@@ -62,12 +62,10 @@ public struct MovieView: View {
                     if (self.movieViewModel.movie!.crewText != nil) {
                         Section(header: Text("Crews")) {
                             Text(self.movieViewModel.movie!.crewText!)
-                                .lineLimit(0)
+                                .lineLimit(nil)
                                 .font(.body)
                         }
                     }
-                    
-                    
                 }
             }
         }
