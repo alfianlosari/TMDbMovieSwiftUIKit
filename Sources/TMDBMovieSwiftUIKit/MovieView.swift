@@ -28,7 +28,8 @@ public struct MovieView: View {
                         Text(self.movieViewModel.movie!.releaseDateText)
                             .font(.subheadline)
                         Text(self.movieViewModel.movie!.ratingText)
-                            .font(.subheadline)                        if (self.movieViewModel.movie!.tagline != nil) {
+                            .font(.subheadline)
+                        if (self.movieViewModel.movie!.tagline != nil) {
                                 Text(self.movieViewModel.movie!.tagline!)
                                     .font(.subheadline)
                         }
