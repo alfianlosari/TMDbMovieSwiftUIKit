@@ -8,9 +8,9 @@
 import SwiftUI
 import TMDbMovieKit
 
-struct MovieListView: View {
+public struct MovieListView: View {
     
-    @ObservedObject var movieListViewModel: MovieListViewModel
+    @ObservedObject private var movieListViewModel: MovieListViewModel
     private let endpoint: MovieEndpoint
     
     init(apiKey: String, endpoint: MovieEndpoint) {

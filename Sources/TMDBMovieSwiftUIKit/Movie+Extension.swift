@@ -8,4 +8,4 @@
 import SwiftUI
 import TMDbMovieKit
 
-extension Movie: Identifiable {}
+public extension Movie: Identifiable {}

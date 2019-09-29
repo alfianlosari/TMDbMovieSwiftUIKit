@@ -8,7 +8,7 @@
 import Combine
 import TMDbMovieKit
 
-final class MovieListViewModel: ObservableObject {
+public final class MovieListViewModel: ObservableObject {
     
     @Published public private(set) var movies = [Movie]()
     @Published public private(set) var isLoading = false
