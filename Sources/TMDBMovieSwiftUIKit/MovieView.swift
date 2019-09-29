@@ -25,20 +25,49 @@ public struct MovieView: View {
                     Section {
                         Text(self.movieViewModel.movie!.title)
                             .font(.headline)
+                        if (self.movieViewModel.movie!.runtimeText != nil) {
+                            Text(self.movieViewModel.movie!.runtimeText!)
+                                .font(.subheadline)
+                        }
                         Text(self.movieViewModel.movie!.releaseDateText)
                             .font(.subheadline)
+                        if (self.movieViewModel.movie!.genreText != nil) {
+                            Text(self.movieViewModel.movie!.genreText!)
+                                .font(.subheadline)
+                        }
+                        
                         Text(self.movieViewModel.movie!.ratingText)
                             .font(.subheadline)
                         if (self.movieViewModel.movie!.tagline != nil) {
-                                Text(self.movieViewModel.movie!.tagline!)
-                                    .font(.subheadline)
+                            Text(self.movieViewModel.movie!.tagline!)
+                                .font(.subheadline)
                         }
                     }
                     
+                    
                     Section {
                         Text(self.movieViewModel.movie!.overview)
+                            .lineLimit(0)
                             .font(.body)
                     }
+                    
+                    if (self.movieViewModel.movie!.castText != nil) {
+                        Section(header: Text("Casts")) {
+                            Text(self.movieViewModel.movie!.castText!)
+                                .lineLimit(0)
+                                .font(.body)
+                        }
+                    }
+                    
+                    if (self.movieViewModel.movie!.crewText != nil) {
+                        Section(header: Text("Crews")) {
+                            Text(self.movieViewModel.movie!.crewText!)
+                                .lineLimit(0)
+                                .font(.body)
+                        }
+                    }
+                    
+                    
                 }
             }
         }
