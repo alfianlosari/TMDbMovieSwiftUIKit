@@ -43,8 +43,6 @@ public struct MovieView: View {
                                 .font(.subheadline)
                         }
                     }
-                    
-                    
                     Section {
                         Text(self.movieViewModel.movie!.overview)
                             .lineLimit(nil)
