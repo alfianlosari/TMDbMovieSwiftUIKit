@@ -16,7 +16,7 @@ let package = Package(
     dependencies: [
         .package(
                    url: "https://github.com/alfianlosari/TMDbMovieKit.git",
-                   from: "1.0.4"
+                   from: "1.0.5"
                )
     ],
     targets: [

@@ -7,6 +7,7 @@
 
 import Combine
 import TMDbMovieKit
+import Foundation
 
 public final class MovieViewModel: ObservableObject {
     
@@ -26,11 +27,15 @@ public final class MovieViewModel: ObservableObject {
         movie = nil
         
         movieStore.fetchMovie(id: id, successHandler: { [weak self](movie) in
-            self?.isLoading = false
-            self?.movie = movie
+            DispatchQueue.main.async {
+                self?.isLoading = false
+                self?.movie = movie
+            }
         }) {[weak self] (error) in
-            self?.isLoading = false
-            self?.error = error
+            DispatchQueue.main.async {
+                self?.isLoading = false
+                self?.error = error
+            }
         }
     }
 }
