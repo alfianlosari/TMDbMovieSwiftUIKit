@@ -43,9 +43,9 @@ public struct MovieListView: View {
             .sheet(isPresented: self.$showingMovie) {
                 MovieView(apiKey: self.apiKey, id: self.selectedId ?? 0)
             }
-            .onAppear {
-                self.movieListViewModel.loadMovies(from: self.endpoint)
-            }
+        }
+        .onAppear {
+            self.movieListViewModel.loadMovies(from: self.endpoint)
         }
     }
     #else
