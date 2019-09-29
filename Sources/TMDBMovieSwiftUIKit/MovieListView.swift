@@ -25,10 +25,9 @@ public struct MovieListView: View {
     
     
     #if os(watchOS)
-    
     public var body: some View {
         List(movieListViewModel.movies) { movie in
-            VStack {
+            VStack(alignment: .leading) {
                 Text(movie.title)
                     .font(.subheadline)
                 Text(movie.overview)
@@ -48,17 +47,18 @@ public struct MovieListView: View {
             self.movieListViewModel.loadMovies(from: self.endpoint)
         }
     }
+    
     #else
     public var body: some View {
         NavigationView {
             List(movieListViewModel.movies) { movie in
                 NavigationLink(destination: MovieView(apiKey: self.apiKey, id: movie.id)) {
-                    VStack {
+                    VStack(alignment: .leading, spacing: 4) {
                         Text(movie.title)
                             .font(.subheadline)
                         Text(movie.overview)
                             .font(.caption)
-                            .lineLimit(2)
+                            .lineLimit(3)
                     }
                 }
             }

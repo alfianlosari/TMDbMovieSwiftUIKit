@@ -24,14 +24,13 @@ public struct MovieView: View {
                 List {
                     Section {
                         Text(self.movieViewModel.movie!.title)
-                            .font(.subheadline)
+                            .font(.headline)
                         Text(self.movieViewModel.movie!.releaseDateText)
-                            .font(.caption)
+                            .font(.subheadline)
                         Text(self.movieViewModel.movie!.ratingText)
-                            .font(.caption)
-                        if (self.movieViewModel.movie!.tagline != nil) {
-                            Text(self.movieViewModel.movie!.tagline!)
-                                .font(.caption)
+                            .font(.subheadline)                        if (self.movieViewModel.movie!.tagline != nil) {
+                                Text(self.movieViewModel.movie!.tagline!)
+                                    .font(.subheadline)
                         }
                     }
                     
