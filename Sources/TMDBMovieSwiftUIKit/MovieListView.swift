@@ -20,7 +20,13 @@ public struct MovieListView: View {
     
     public var body: some View {
         List(movieListViewModel.movies) { movie in
-            Text(movie.title)
+            VStack {
+                Text(movie.title)
+                    .font(.subheadline)
+                Text(movie.overview)
+                    .font(.caption)
+                .lineLimit(2)
+            }
         }
         .onAppear {
             self.movieListViewModel.loadMovies(from: self.endpoint)
